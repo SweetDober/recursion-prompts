@@ -10,9 +10,11 @@ var factorial = function(n) {
   //Base case:
   // if n is zero, return 1
   // otherwise, return n times call to the factorial with modified n input
-
   if (n === 0) {
     return 1;
+  }
+  if (n < 0) {
+    return null;
   }
   return n * (factorial(n - 1));
 };

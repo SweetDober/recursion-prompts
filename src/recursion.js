@@ -39,19 +39,26 @@ var sum = function(array) {
 
 
 var arraySum = function(array) {
-  // Output - number
-  // If input array is empty, output - is zero
-  // If input array has 1 integer, return the 1st (only) elem of this array
-  // Recursive case
-    // make a copy of the input array
-    // flatten it (without recursion)
-    // return the sum of the last elem in the copied arr and the call to the function with the input of the copied array
+  // if the array is empty, return zero
+  // create a sum variable
+  // iterate over the input array
+  //   if the current element is an array
+  //   increment sum by the value resulting from calling arraySum with the current element as its modified input
+  // otherwise increment sum by the current element
+
   if (array.length === 0) {
     return 0;
   }
-  if(array.length === 1) {
-    return arraySum[0];
+  var sum = 0;
+  for (var i = 0; i < array.length; i++) {
+    var currentElement = array[i];
+    if(Array.isArray(currentElement)) {
+      sum = sum + arraySum(currentElement);
+    } else {
+      sum = sum + currentElement;
+    }
   }
+  return sum;
 
 };
 

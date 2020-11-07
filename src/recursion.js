@@ -33,16 +33,28 @@ var sum = function(array) {
   if (array.length === 1) {
     return array[0];
   }
-
-  var arrayCopy = array.slice();
-
-  return arrayCopy.pop() + sum(arrayCopy);
+  return array[0] + sum(array.slice(1));
 
 };
 
 // 3. Sum all numbers in an array containing nested arrays.
 // arraySum([1,[2,3],[[4]],5]); // 15
+
 var arraySum = function(array) {
+  // Output - number
+  // If input array is empty, output - is zero
+  // If input array has 1 integer, return the 1st (only) elem of this array
+  // Recursive case
+    // make a copy of the input array
+    // flatten it (without recursion)
+    // return the sum of the last elem in the copied arr and the call to the function with the input of the copied array
+  if (array.length === 0) {
+    return 0;
+  }
+  if(array.length === 1) {
+    return arraySum[0];
+  }
+
 };
 
 // 4. Check if a number is even.

@@ -30,15 +30,13 @@ var sum = function(array) {
   if (array.length === 0) {
     return 0;
   }
-  if (array.length === 1) {
-    return array[0];
-  }
   return array[0] + sum(array.slice(1));
 
 };
 
 // 3. Sum all numbers in an array containing nested arrays.
 // arraySum([1,[2,3],[[4]],5]); // 15
+
 
 var arraySum = function(array) {
   // Output - number
